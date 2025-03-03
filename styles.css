@@ -327,9 +327,10 @@ main {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   .slider-section {
-    min-height: 50vh;
+    height: 50vh;
     .slider-wrapper { height: 50vh; }
   }
+  
 
     .floating-images-container {
       display: none;
