@@ -75,7 +75,7 @@ main {
   overflow: hidden;
   width: 100%;
   max-width: 100%;
-  height: 60vh;
+  height: 66vh;
   margin: auto;
 
 
@@ -85,7 +85,8 @@ main {
   
   .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 2ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
   }
   
   .slider-image {
@@ -180,15 +181,17 @@ main {
     h3 {
       font-family: "Poppins", sans-serif;
       font-size: clamp(1rem, 2.5vw, 1.5rem);
-      color: #ffffffd0;
+      color: #ffffffd2;
       margin-bottom: 0.25rem;
+      text-align: left;
     }
 
     p {
       font-family: "Montserrat", sans-serif;
       font-size: clamp(0.9rem, 2vw, 1rem);
       font-weight: 500;
-      color: #ffffffb3;
+      color: #ffffffd2;
+      text-align: left;
     }
 
     &.visible {
@@ -242,19 +245,21 @@ main {
       font-family: 'Poppins', sans-serif;
       font-weight: 500;
       background: none;
-      color: #ffffffaa;
+      color: #ffffffe8;
       border-bottom-left-radius: 0.8rem;
       border-bottom-right-radius: 0.8rem;
       transition: transform 0.3s ease, opacity 0.3s ease;
 
       h2 {
         margin-bottom: 0.5rem;
+        text-align: left;
       }
 
       p {
         font-family: "Montserrat", sans-serif;
         font-weight: 500;
-        color: #ffffffaa;
+        color: #ffffffc3;
+        text-align: left;
       }
     }
   }
@@ -325,7 +330,11 @@ main {
     min-height: 50vh;
     .slider-wrapper { height: 50vh; }
   }
-  
+
+    .floating-images-container {
+      display: none;
+    }
+
   .registration-process-section,
   .register-section {
     padding: 2rem 1rem;
@@ -343,7 +352,7 @@ main {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .slider-text {
     padding: 0.5rem;
   }

@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const images = carousel.querySelectorAll('.slider-image');
   const totalImages = images.length;
   let index = 0;
-  const slideDuration = 3000;      // time between slides in milliseconds
-  const transitionDuration = 500;  // Duration of the slide transition effect
+  const slideDuration = 3200;      // time between slides in milliseconds
+  const transitionDuration = 1500;  // Duration of the slide transition effect
 
   /*Clone the first image and append it to the carousel.
     This clone will allow a smooth transition when looping back to the start.*/
