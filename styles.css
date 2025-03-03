@@ -291,9 +291,10 @@ main {
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
   &:hover {
     background: linear-gradient(45deg, #77eea9, #46c67b);
+    transform: scale(1.1);
   }
 }
 

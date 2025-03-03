@@ -1,4 +1,5 @@
 /*3-Step Process Animation:
+
 This block animates the steps in the registration process.
 It waits until the DOM is fully loaded, then makes each step appear one by one. */
 
@@ -22,6 +23,7 @@ It waits until the DOM is fully loaded, then makes each step appear one by one. 
   });
   
 /*Carousel/Slider Animation:
+
   This block creates an automatic image carousel that transitions between slides.
   It also clones the first image and appends it to the end for a smooth looping effect.*/
 document.addEventListener("DOMContentLoaded", function() {
