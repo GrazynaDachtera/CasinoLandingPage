@@ -3,24 +3,24 @@
 This block animates the steps in the registration process.
 It waits until the DOM is fully loaded, then makes each step appear one by one. */
 
-  document.addEventListener("DOMContentLoaded", function() {
-    const steps = document.querySelectorAll('.registration-process-section .step');
-    //For each step, I set initial styles to hide them and move them down 40px.
-    steps.forEach(step => {
-      step.style.opacity = '0';
-      step.style.transform = 'translateY(40px)';
-    });
-
-  /* Loop through each step and set a timeout to animate them sequentially.
-  Each step will become visible after a delay based on its position (index). */
-    steps.forEach((step, index) => {
-      setTimeout(() => {
-        step.classList.add('visible');
-        step.style.opacity = '';
-        step.style.transform = '';
-      }, (index + 1) * 500);
-    });
+document.addEventListener("DOMContentLoaded", function() {
+  const steps = document.querySelectorAll('.registration-process-section .step');
+  //For each step, I set initial styles to hide them and move them down 40px.
+  steps.forEach(step => {
+    step.style.opacity = '0';
+    step.style.transform = 'translateY(40px)';
   });
+
+/* Loop through each step and set a timeout to animate them sequentially.
+Each step will become visible after a delay based on its position (index). */
+  steps.forEach((step, index) => {
+    setTimeout(() => {
+      step.classList.add('visible');
+      step.style.opacity = '';
+      step.style.transform = '';
+    }, (index + 1) * 500);
+  });
+});
   
 /*Carousel/Slider Animation:
 
