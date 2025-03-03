@@ -92,11 +92,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const slideDuration = 3000;      // time between slides in milliseconds
   const transitionDuration = 500;  // CSS transition duration in milliseconds
 
-  // Clone the first image to append it at the end for a smooth infinite loop
+
   const firstClone = images[0].cloneNode(true);
   carousel.appendChild(firstClone);
 
-  // New total slide count (original images + clone)
+
   const totalSlides = totalImages + 1;
 
   setInterval(() => {
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
     carousel.style.transition = `transform ${transitionDuration}ms ease-in-out`;
     carousel.style.transform = `translateX(-${index * 100}%)`;
 
-    // When we reach the cloned slide, reset to the start without transition
+
     if (index === totalSlides - 1) {
       setTimeout(() => {
         carousel.style.transition = 'none';

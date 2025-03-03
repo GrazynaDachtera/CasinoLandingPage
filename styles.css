@@ -1,6 +1,5 @@
 @import "~typeface-montserrat/styles.css";
 
-/* RESET / GLOBAL */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,7 +20,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Global heading alignment */
+/* Global heading */
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
@@ -104,6 +103,7 @@ main {
     max-width: 90%;
     padding: 1rem;
     backdrop-filter: blur(10px);
+    background: #3e3d3d94;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
