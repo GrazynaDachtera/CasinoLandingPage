@@ -344,43 +344,56 @@ main {
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .slider-section {
-    height: 50vh;
-    .slider-wrapper { height: 50vh; }
+    height: 60vh;
   }
-  
-  .floating-images-container {
-    display: none;
+  .slider-image {
+    height: 40vh;
   }
-
-  .registration-process-section,
-  .register-section {
-    padding: 2rem 1rem;
-  }
-  
-  .additional-cards-section .cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-height: 480px) {
-  .additional-cards-section .cards-container,
-  .registration-process-section .steps-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .slider-text {
     padding: 0.5rem;
   }
-  
+  .floating-images-container .floating-image {
+    width: clamp(4rem, 30vw, 10rem);
+  }
+}
+
+/* TABLETS */
+@media (min-width: 481px) and (max-width: 768px) {
+  .slider-section {
+    height: 60vh;
+  }
+  .slider-image {
+    height: 50vh;
+  }
+  .slider-text {
+    padding: 0.8rem;
+  }
   .floating-images-container .floating-image {
     width: clamp(5rem, 35vw, 12.5rem);
   }
-  
-  .section-title {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .slider-section {
+    height: 60vh;
+  }
+  .slider-image {
+    height: 60vh;
+  }
+  .registration-process-section,
+  .register-section {
+    padding: 3rem 2rem;
+  }
+  .additional-cards-section {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* IPHONES */
+@media (max-device-width: 812px) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
