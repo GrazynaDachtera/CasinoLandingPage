@@ -1,3 +1,5 @@
+CASINO LANDING PAGE
+
 This landing page is designed to provide users with a visually rich and intuitive experience. 
 Built using HTML, SCSS, and Vanilla JavaScript, it leverages modern web design techniques to engage users and drive conversions. 
 The page is fully responsive, ensuring optimal performance on every device.
