@@ -1,110 +1,52 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Lazy-load videos marked with a data-src attribute
-  function lazyLoadVideos() {
-    const videos = document.querySelectorAll("video[data-src]");
-    const config = { root: null, threshold: 0.25 };
+/*3-Step Process Animation:
+This block animates the steps in the registration process.
+It waits until the DOM is fully loaded, then makes each step appear one by one. */
 
-    const loadVideo = (video) => {
-      const dataSrc = video.getAttribute("data-src");
-      if (dataSrc) {
-        video.src = dataSrc;
-        video.removeAttribute("data-src");
-        video.load();
-      }
-    };
+  document.addEventListener("DOMContentLoaded", function() {
+    const steps = document.querySelectorAll('.registration-process-section .step');
+    //For each step, I set initial styles to hide them and move them down 40px.
+    steps.forEach(step => {
+      step.style.opacity = '0';
+      step.style.transform = 'translateY(40px)';
+    });
 
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            loadVideo(entry.target);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, config);
-      videos.forEach(video => observer.observe(video));
-    } else {
-      videos.forEach(video => loadVideo(video));
-    }
-  }
-  lazyLoadVideos();
-
-  /*
-  // Smooth carousel/slider logic for images
-  const slidesContainer = document.querySelector(".carousel");
-  if (slidesContainer) {
-    let slides = slidesContainer.querySelectorAll("img.slider-image");
-    if (slides.length > 1) {
-      // Clone the first slide for a seamless loop
-      const firstSlideClone = slides[0].cloneNode(true);
-      slidesContainer.appendChild(firstSlideClone);
-      
-      // Update the slides NodeList after cloning
-      slides = slidesContainer.querySelectorAll("img.slider-image");
-      const totalSlides = slides.length;
-      let currentIndex = 0;
-      const slideInterval = 6000; // time between slides
-      const transitionTime = 2000; // slide transition duration
-
-      function nextSlide() {
-        currentIndex++;
-        slidesContainer.style.transition = `transform ${transitionTime}ms ease-in-out`;
-        slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-      }
-
-      // When the transition ends, reset if we've reached the clone
-      slidesContainer.addEventListener("transitionend", () => {
-        if (currentIndex >= totalSlides - 1) {
-          slidesContainer.style.transition = "none";
-          slidesContainer.style.transform = "translateX(0)";
-          currentIndex = 0;
-          // Force reflow to immediately apply the non-transitioned state
-          void slidesContainer.offsetWidth;
-        }
-      });
-
-      setInterval(nextSlide, slideInterval);
-    }
-  }
-  */
-
-  // 3-Step Process Animation
-  const steps = document.querySelectorAll('.registration-process-section .step');
-  steps.forEach(step => {
-    step.style.opacity = '0';
-    step.style.transform = 'translateY(40px)';
+  /* Loop through each step and set a timeout to animate them sequentially.
+  Each step will become visible after a delay based on its position (index). */
+    steps.forEach((step, index) => {
+      setTimeout(() => {
+        step.classList.add('visible');
+        step.style.opacity = '';
+        step.style.transform = '';
+      }, (index + 1) * 1000);
+    });
   });
-  steps.forEach((step, index) => {
-    setTimeout(() => {
-      step.classList.add('visible');
-      step.style.opacity = '';
-      step.style.transform = '';
-    }, (index + 1) * 1000);
-  });
-});
-
-
+  
+/*Carousel/Slider Animation:
+  This block creates an automatic image carousel that transitions between slides.
+  It also clones the first image and appends it to the end for a smooth looping effect.*/
 document.addEventListener("DOMContentLoaded", function() {
   const carousel = document.querySelector('.carousel');
   const images = carousel.querySelectorAll('.slider-image');
   const totalImages = images.length;
   let index = 0;
   const slideDuration = 3000;      // time between slides in milliseconds
-  const transitionDuration = 500;  // CSS transition duration in milliseconds
+  const transitionDuration = 500;  // Duration of the slide transition effect
 
-
+  /*Clone the first image and append it to the carousel.
+    This clone will allow a smooth transition when looping back to the start.*/
   const firstClone = images[0].cloneNode(true);
   carousel.appendChild(firstClone);
 
-
+  // Calculate the total number of slides (original images + the cloned image)
   const totalSlides = totalImages + 1;
-
+  // Use setInterval to automatically advance the carousel at regular intervals.
   setInterval(() => {
     index++;
     carousel.style.transition = `transform ${transitionDuration}ms ease-in-out`;
     carousel.style.transform = `translateX(-${index * 100}%)`;
 
-
+    /*When we reach the cloned image (the end of the carousel),
+      reset the carousel back to the start without any transition.*/
     if (index === totalSlides - 1) {
       setTimeout(() => {
         carousel.style.transition = 'none';

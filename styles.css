@@ -116,6 +116,7 @@ main {
       font-size: clamp(2rem, 8vw, 6rem);
       font-weight: 600;
       margin-bottom: 0.5rem;
+      z-index: 99999;
     }
 
     .description-container,
@@ -302,6 +303,7 @@ main {
   color: #fff;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
+  z-index: 999999;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   &:hover {
     background: linear-gradient(45deg, #77eea9, #46c67b);
