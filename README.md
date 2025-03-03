@@ -10,7 +10,7 @@ Bold Headings: Eye-catching headings overlay the carousel to capture user attent
 Section 2: 3-Step Registration Process
 Step-by-Step Guidance: Clear and concise steps to guide users through the registration process.
 Interactive Animation: Each registration step enlarges on hover, creating a dynamic and engaging visual effect.
-User-Friendly Layout: Designed to simplify user onboarding and encourage sign-ups.
+User-Friendly Layout: Designed to simplify user onboarding and encourage registration.
 
 Section 3: Casino Offers & Service Highlights
 Floating Offer Cards: Three interactive cards represent exclusive offers and highlight the excellent service of our casino.
