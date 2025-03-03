@@ -17,7 +17,7 @@ It waits until the DOM is fully loaded, then makes each step appear one by one. 
         step.classList.add('visible');
         step.style.opacity = '';
         step.style.transform = '';
-      }, (index + 1) * 1000);
+      }, (index + 1) * 500);
     });
   });
   

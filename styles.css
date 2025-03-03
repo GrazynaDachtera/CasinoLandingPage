@@ -316,7 +316,7 @@ main {
 /* LEVITATION ANIMATION */
 @keyframes levitateUp {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-1rem); }
+  50% { transform: translateY(-3rem); }
 }
 
 /* MEDIA QUERIES */
